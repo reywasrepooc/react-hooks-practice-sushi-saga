@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Sushi({ sushi }) {
-
+const [removeSushi, setRemoveSushi] = useState("")
   
+const handleClick = () => {
+
+
+}
   return (
     <div className="sushi">
-      <div className="plate" onClick={/* Give me a callback! */ null}>
+      <div className="plate" onClick={handleClick}>
         {/* Tell me if this sushi has been eaten! */}
         {false ? null : (
           <img

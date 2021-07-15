@@ -4,20 +4,21 @@ import Sushi from "./Sushi"
 
 
 
-function SushiContainer({ sushiList }) {
+function SushiContainer({ sushis, onEatSushi }) {
 
 const [sushiFourList, setSushiFourList] = useState(0)
 
 
-const sushiShowDetails = sushiList.slice(sushiFourList, sushiFourList + 4).map((sushi) =>
+const sushiShowDetails = sushis.slice(sushiFourList, sushiFourList + 4).map((sushi) =>
   <Sushi 
   sushi={sushi}
   key={sushi.id}
+  onEatSushi={onEatSushi}
   /> 
 )
 
 function handleClickMoreSushi() {
-  setSushiFourList((sushiFourList) => (sushiFourList + 4) % sushiList.length)
+  setSushiFourList((sushiFourList) => (sushiFourList + 4) % sushis.length)
 }
 
   return (
